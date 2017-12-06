@@ -16,11 +16,30 @@ var easyRoute= require('./easyRoutes');
  },function(req,res,next){
 	 console.log(8888);
 	 next();
- }],'./page@index')
+ }],'./page@index');
+/*easyRoute.group('/888',function(req,res){
+	 res.send('hi,there!');
+ })*/
+ easyRoute.group('/888',function(){
+	 easyRoute.get('/abc','./page@index');
+	 easyRoute.get('/a',function(req,res){
+		 res.send('you got it!');
+	 });
+ })
  
  easyRoute.bind(app);
  
  
+ /*var router = express.Router();
+ router.get('/events', function(req, res, next) {
+  res.send('666')
+});
+ app.use('/b',function(req,res,next){
+	 console.log(666)
+	 next();
+ },router)*/
+ /*
+ */
  
  
  
