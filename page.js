@@ -18,3 +18,8 @@ module.exports.about=function(req,res)
 {
 	res.send('about');
 }
+
+module.exports.contact=function(req,res)
+{
+	res.send('contact:84645132');
+}
