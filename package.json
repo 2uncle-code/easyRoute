@@ -1,11 +1,11 @@
 {
   "name": "express-easy-router",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "more easy and flexible router for node express",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {   
-    "express": "~4.11.x"    
+  "dependencies": {
+    "express": "~4.11.x"
   },
   "author": {
     "name": "vtista",
