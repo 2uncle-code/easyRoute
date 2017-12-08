@@ -8,7 +8,7 @@ https://github.com/vtista/easyRoute
 var express = require('express');
 var app = express();
 
-var easyRoute= require('./index');
+var easyRoute= require('express-easy-router');
 easyRoute.get('/abc','./page@index');
 easyRoute.bind(app);
 ```
