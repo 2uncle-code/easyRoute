@@ -1,9 +1,21 @@
 # express-easy-router
-More easy and flexible router for node express,
+More easy and flexible router for node express.
 
-made with a lot of love and tissue papers!  :)
 
-If you want to involved,or file some issues.Find me at:
+
+1. Group express routes and middlewares with mount path,
+
+
+
+1. Create routes By file path like in laravel,
+
+
+
+1. Deeply extended with express orignal router,Which means what you can do in express router,You can do with express-easy-router.
+
+Made with a lot of love and tissue papers!  :)
+
+If you want to be involved,Or file some issues.Find me at:
 
 https://github.com/vtista/easyRoute
 ## Quick Start
