@@ -70,7 +70,7 @@ easyRoute.group('/8888',function(req,res){
 	 });
  })
 ```
- ### Route group with mount path,middleware and router
+### Route group with mount path,middleware and router
 ```
  easyRoute.group('/admin',function(req,res,next){
 	 console.log('who r u?');
