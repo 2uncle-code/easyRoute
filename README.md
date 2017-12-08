@@ -6,23 +6,47 @@ made with a lot of love and tissue papers!  :)
 If you want to involved,or file some issues.Find me at:
 
 https://github.com/vtista/easyRoute
-## quick start
+## Quick Start
 
-    var express = require('express');
-    var app = express();
-    
-    var easyRoute= require('express-easy-router');
-    easyRoute.get('/abc','./page@index');
-    easyRoute.bind(app);
 
-## examples
+
+
+1. **npm install express-easy-router**
+
+
+1. create **index.js**  
+
+        var express = require('express');
+	    var app = express();
+	    var easyRoute= require('express-easy-router');
+	    easyRoute.get('/abc',function(req,res){
+	    	res.send('Welcome,express-easy-router!');
+	    });
+	    easyRoute.bind(app);
+	    
+	    var server = app.listen(8081, function () {
+	     
+	      var host = server.address().address
+	      var port = server.address().port
+	     
+	      console.log(" http://%s:%s", host, port)
+	     
+	    })
+
+1. **node index.js**
+   
+	Now open the browser,Navigate to http://localhost:8081/abc .
+	
+	You shall see the welcome message !
+
+## Examples
 
 
 ### Router with controller's file path and action
 
  `easyRoute.get('/abc','./page@index');`
 
-### Router as old fashiioned way,require the controller and action
+### Router as old fashioned way,require the controller and action
 
       var page=require('./page');
      easyRoute.get('/page',page.about);
@@ -86,6 +110,12 @@ https://github.com/vtista/easyRoute
     	 })
      })
     
+##
+For more info or try to dig deeper, 
 
- 
+You could find some more examples in examples.js located at package's root dir.
+
+Happy coding! 
+
+:) 
   

@@ -142,67 +142,69 @@ module.exports.bind=function(app){
 	
 		
 		easyRouter.map(function(routeMounter){
-			  //This is for easyRouter.get()/easyRouter.post()
-			//   console.log(routeMounter)
-			//   console.log('......................................................')
-			//   var b=routeMounter.mountPath===null&routeMounter.middleWare===null
-			//   console.log(b)
+			/* 
+			  This is for easyRouter.get()/easyRouter.post()			  
+			*/
 			if(routeMounter.mountPath===null&routeMounter.middleWare===null&routeMounter.router!=null)	
-			{	console.log('1') 
+			{	//console.log('1') 
 				app.use(routeMounter.router)
 			}
 			 
-			  //This is for easyRouter.group()with one argument
-				  //eg. easyRouter.group(function(req,res){
-				  //	console.log('hi!');
-				  //	}	
-			  
+			/*  
+			This is for easyRouter.group()with one argument
+				  eg. easyRouter.group(function(req,res){
+				  	console.log('hi!');
+				  	}	
+			*/  
 			else if(routeMounter.mountPath===null&routeMounter.router===null&routeMounter.middleWare!=null)
-			{	console.log('2') 
+			{	//console.log('2') 
 				app.use(routeMounter.middleWare)
 			}
-				// This is for easyRoute.group()with two arguments
-				//mount path and middleware
-				// easyRoute.group('/888',function(req,res){
-				// 	 res.send('hi,there!');
-				//  })				
-				//  })
-
+			/*
+				This is for easyRoute.group()with two arguments
+				mount path and middleware
+				easyRoute.group('/888',function(req,res){
+					 res.send('hi,there!');
+				 })				
+				 })
+				 */
 
 				   
 			else if(routeMounter.router===null&routeMounter.mountPath!=null&routeMounter.middleWare!=null){
-				console.log('3') 
+				//console.log('3') 
 				app.use(routeMounter.mountPath,routeMounter.middleWare);
 			}
-
-				// This is for easyRoute.group()with two arguments
-				//mount path and router
-				//  easyRoute.group('/888',function(){
-				// 	 easyRoute.get('/abc','./page@index');
-				// 	 easyRoute.get('/a',function(req,res){
-				// 		 res.send('you got it!');
-				// 	 });
-				//  })
+				/*
+				This is for easyRoute.group()with two arguments
+				mount path and router
+				 easyRoute.group('/888',function(){
+					 easyRoute.get('/abc','./page@index');
+					 easyRoute.get('/a',function(req,res){
+						 res.send('you got it!');
+					 });
+				 })
+				 */
 			else if(routeMounter.router!=null&routeMounter.mountPath!=null&routeMounter.middleWare===null){
-				console.log('4') 
+				//console.log('4') 
 				app.use(routeMounter.mountPath,routeMounter.router);
 			}
-
-				// This is for easyRoute.group()with two arguments
-				//mount path and router
-				//  easyRoute.group('/888',function(req,res,next){
-				// do something here...
-				//	next();
-				// },
-				//function(){
-				// 	 easyRoute.get('/abc','./page@index');
-				// 	 easyRoute.get('/a',function(req,res){
-				// 		 res.send('you got it!');
-				// 	 });
-				//  })
+			/*
+				This is for easyRoute.group()with two arguments
+				mount path and router
+				 easyRoute.group('/888',function(req,res,next){
+				do something here...
+					next();
+				},
+				function(){
+					 easyRoute.get('/abc','./page@index');
+					 easyRoute.get('/a',function(req,res){
+						 res.send('you got it!');
+					 });
+				 })
+			*/	 
 			else if(routeMounter.mountPath!=null&routeMounter.middleWare!=null&routeMounter.router!=null)
 			{
-				console.log('5') 
+				//console.log('5') 
 				app.use(routeMounter.mountPath,routeMounter.middleWare,routeMounter.router);	
 			}
 			
