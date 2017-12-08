@@ -2,25 +2,26 @@
 more easy and flexible router for node express
 
 ## quick start
+```
 var express = require('express');
 var app = express();
 
 var easyRoute= require('./index');
 easyRoute.get('/abc','./page@index');
 easyRoute.bind(app);
-
+```
 ## examples
 
 
 ### Router with controller's file path and action
-
+```
  easyRoute.get('/abc','./page@index');
-
+```
 ### Router as old fashiioned way,require the controller and action
-
+```
   var page=require('./page');
  easyRoute.get('/page',page.about);
-
+```
 ### Router with parameters
 
  easyRoute.get('/666/:name/',function(req,res){
