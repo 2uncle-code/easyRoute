@@ -1,6 +1,8 @@
 # express-easy-router
-more easy and flexible router for node express
-
+More easy and flexible router for node express,
+made with a lot of love and tissue papers!  :)
+If you want to involved,or file some issues.Find me at:
+https://github.com/vtista/easyRoute
 ## quick start
 ```
 var express = require('express');
@@ -29,14 +31,14 @@ easyRoute.bind(app);
  });
 ```
 
- ### Router with middleware 
+### Router with middleware 
 ```
  easyRoute.get('/contact',function(req,res,next){
 	 console.log('contact me')
 	 next();
  },page.contact);
  ```
- ### Router with middleware group
+### Router with middleware group
 ```
  easyRoute.get('/bbc',[function(req,res,next){
 	 console.log(888);
@@ -47,7 +49,7 @@ easyRoute.bind(app);
  }],'./page@index');
  ```
 
- ### Route group with app level middleware
+### Route group with app level middleware
 ```
  easyRoute.group(function(req,res,next){
 		console.log('hi!');
