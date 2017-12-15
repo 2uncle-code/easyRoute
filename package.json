@@ -12,7 +12,7 @@
     "email": "mark@vtista.com"
   },
   "scripts": {
-    "start": " node test.js"
+    "start": " supervisor examples.js"
   },
   "engines": {
     "node": ">=4.3"

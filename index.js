@@ -210,3 +210,13 @@ module.exports.bind=function(app){
 			
 		})
 }
+
+/**
+ * Import folder as object so you can easily import each controller or modles at once.
+ */
+module.exports.importer=function(rel_dir)
+{
+	var importer=require('./lib/importer')(rel_dir);
+	
+   return importer;
+}
