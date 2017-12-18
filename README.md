@@ -1,5 +1,5 @@
 # express-easy-router
-Group express routes,Create express routes By file path,Import express controllers and models,make your routes more easy and flexible.
+Group express routes,Create express routes By file path,Import express controllers and models.
 
 
 
