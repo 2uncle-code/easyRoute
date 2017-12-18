@@ -1,10 +1,8 @@
 {
   "name": "express-easy-router",
-<<<<<<< HEAD
-  "version": "1.0.8",
-=======
-  "version": "1.0.9",
->>>>>>> b46cc743ef29e51a7d8723f8149c2b2db72ddaf4
+
+  "version": "1.1.0",
+
   "description": "more easy and flexible router for node express",
   "main": "index.js",
   "license": "MIT",
