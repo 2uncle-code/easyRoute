@@ -1,5 +1,5 @@
 # express-easy-router
-More easy and flexible router for node express.
+Group express routes,Create express routes By file path,Import express controllers and models,make your routes more easy and flexible.
 
 
 
@@ -8,6 +8,9 @@ More easy and flexible router for node express.
 
 
 1. Create routes By file path like in laravel,
+
+
+1. Import express controllers and models,
 
 
 
