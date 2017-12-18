@@ -124,7 +124,12 @@ https://github.com/vtista/easyRoute
     		 res.send("I'm a user!");
     	 })
      })
-    
+### Import folder as object,so you can manage your controllers,models at once
+
+	var myControllers=easyRoute.importer('./controller');
+	easyRoute.get('/importer',myControllers.page.about);
+	easyRoute.get('/importerlist',myControllers.list.index);
+
 ##
 For more info or try to dig deeper, 
 
