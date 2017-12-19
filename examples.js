@@ -4,10 +4,12 @@ var express = require('express');
 var app = express();
 
 var easyRoute= require('./index');
+easyRoute.enableseo('html');
+
 var page=require('./controller/page');
 
  easyRoute.get('/abc','./controller/page@index');
- easyRoute.get('/666/:name/',function(req,res){
+ easyRoute.get('/666/:name',function(req,res){
 	 res.send('hi,666'+req.params.name);
  });
  easyRoute.get('/page',page.about);
@@ -52,6 +54,7 @@ easyRoute.group('/8888',function(req,res){
  easyRoute.get('/importer',myControllers.page.about);
  easyRoute.get('/importerlist',myControllers.list.index);
 
+
  
   
  easyRoute.bind(app);
@@ -60,7 +63,7 @@ easyRoute.group('/8888',function(req,res){
  
  
  
-var server = app.listen(8081, function () {
+var server = app.listen(80, function () {
  
   var host = server.address().address
   var port = server.address().port

@@ -5,6 +5,7 @@ var easyRouter=new Array();
 var mount_path=	//The first argument for route group,can be mount path or any other thing,for routeGroup.
 	middle_wares=null;	//Deal with three arguments condition,middlewares for routeGroup.
 
+var suffix=null //Enable or Disable add 'html'suffix to the end of request url,which is good for SEO.
 
 var routerMethods={
 	get:'get',
@@ -17,7 +18,10 @@ var routerAction=function(args,method){
         var v1=args[0];		 //Get the first argument.
 		var cmdstr='';		 //
         if(arglength===3)			
-        {
+        { if(suffix!==null)
+			{
+				v1+='.'+suffix;
+			}	
 		    var str=args[2];//The third argument,could be path of view or callback function.			
 			var v2=args[1];//we don't do anything here.
 			if((typeof str!='string')||str.constructor!=String)
@@ -35,6 +39,10 @@ var routerAction=function(args,method){
 			}
         }else if(arglength===2)
         {   
+			if(suffix!==null)
+			{
+				v1+='.'+suffix;
+			}
 			var str=args[1];//The second argument,could be path of view or callback function.
 			if((typeof str!='string')||str.constructor!=String)
 			{
@@ -220,3 +228,10 @@ module.exports.importer=function(rel_dir)
 	
    return importer;
 }
+
+/**
+ * Add .html at end of the request url.
+ */
+module.exports.enableseo=function(suf){
+	suffix=suf;
+};

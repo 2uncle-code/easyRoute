@@ -1,5 +1,5 @@
 # express-easy-router
-Group express routes,Create express routes By file path,Import express controllers and models.
+More easy and flexible router for node express.
 
 
 
@@ -11,6 +11,9 @@ Group express routes,Create express routes By file path,Import express controlle
 
 
 1. Import express controllers and models,
+
+
+1. Enable SEO by add suffix to the end of requeset url,
 
 
 
@@ -34,19 +37,18 @@ https://github.com/vtista/easyRoute
         var express = require('express');
 	    var app = express();
 	    var easyRoute= require('express-easy-router');
+		easyRoute.enableseo('html');//You need to call enableseo() at the beginning.
+
 	    easyRoute.get('/abc',function(req,res){
 	    	res.send('Welcome,express-easy-router!');
 	    });
-	    easyRoute.bind(app);
+
+	    easyRoute.bind(app); //You need to call bind() to register routers to app.
 	    
-	    var server = app.listen(8081, function () {
+	    var server = app.listen(8081, function () { })
 	     
-	      var host = server.address().address
-	      var port = server.address().port
 	     
-	      console.log(" http://%s:%s", host, port)
-	     
-	    })
+	    
 
 1. **node index.js**
    
@@ -56,6 +58,8 @@ https://github.com/vtista/easyRoute
 
 ## Examples
 
+### Enable SEO by add suffix to the end of requeset url
+	easyRoute.enableseo('html');
 
 ### Router with controller's file path and action
 
