@@ -8,6 +8,9 @@ easyRoute.enableseo('html');
 
 var page=require('./controller/page');
 
+ easyRoute.get('/',function(req,res){
+	 res.send('welcome!');
+ })
  easyRoute.get('/abc','./controller/page@index');
  easyRoute.get('/666/:name',function(req,res){
 	 res.send('hi,666'+req.params.name);

@@ -18,7 +18,7 @@ var routerAction=function(args,method){
         var v1=args[0];		 //Get the first argument.
 		var cmdstr='';		 //
         if(arglength===3)			
-        { if(suffix!==null)
+        { if(suffix!==null&v1!='/')
 			{
 				v1+='.'+suffix;
 			}	
@@ -39,7 +39,7 @@ var routerAction=function(args,method){
 			}
         }else if(arglength===2)
         {   
-			if(suffix!==null)
+			if(suffix!==null&v1!='/')
 			{
 				v1+='.'+suffix;
 			}
