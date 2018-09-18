@@ -11,11 +11,11 @@ var page=require('./controller/page');
  easyRoute.get('/',function(req,res){
 	 res.send('welcome!');
  })
- easyRoute.get('/abc','./controller/page@index');
+  easyRoute.get('/abc','./controller/page@index');
  easyRoute.get('/666/:name',function(req,res){
 	 res.send('hi,666'+req.params.name);
  });
- easyRoute.get('/page',page.about);
+  easyRoute.get('/page',page.about);
  
  easyRoute.get('/contact',function(req,res,next){
 	 console.log('contact me')
@@ -30,13 +30,8 @@ var page=require('./controller/page');
 	 next();
  }],'./controller/page@index');
  
- easyRoute.group(function(req,res,next){
-		console.log('hi!');
-		next();
-		});	
-easyRoute.group('/8888',function(req,res){
-	 res.send('hi,there!');
- })
+
+
  easyRoute.group('/888',function(){
 	 easyRoute.get('/abc','./controller/page@index');
 	 easyRoute.get('/a',function(req,res){
@@ -53,9 +48,9 @@ easyRoute.group('/8888',function(req,res){
  })
 
 
- var myControllers=easyRoute.importer('./controller');
- easyRoute.get('/importer',myControllers.page.about);
- easyRoute.get('/importerlist',myControllers.list.index);
+  var myControllers=easyRoute.importer('./controller');
+  easyRoute.get('/importer',myControllers.page.about);
+  easyRoute.get('/importerlist',myControllers.list.index);
 
 
  
@@ -66,7 +61,7 @@ easyRoute.group('/8888',function(req,res){
  
  
  
-var server = app.listen(80, function () {
+var server = app.listen(8088, function () {
  
   var host = server.address().address
   var port = server.address().port

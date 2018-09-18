@@ -95,12 +95,7 @@ https://github.com/vtista/easyRoute
      }],'./page@index');
  
 
-### Route group with app level middleware
 
-     easyRoute.group(function(req,res,next){
-    		console.log('hi!');
-    		next();
-    		});	
     		
 ### Route group with mount path and middleware 
 
