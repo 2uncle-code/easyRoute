@@ -72,7 +72,7 @@ module.exports=easyRouter={
 		let sufix=Seo.length>0?'.'+Seo:Seo;
 		let router={
 			_path:path.length>1?ParentPath+path+sufix:path
-			,_callbacks:ParentCallBacks.length>1?ParentCallBacks.push(callbacks):callbacks
+			,_callbacks:ParentCallBacks.length>0?ParentCallBacks.concat(callbacks):callbacks
 			,_method:method
 		}
 		
