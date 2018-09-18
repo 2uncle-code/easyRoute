@@ -52,13 +52,15 @@ https://github.com/vtista/easyRoute
 
 1. **node index.js**
    
-	Now open the browser,Navigate to http://localhost:8081/abc .
+	Now open the browser,Navigate to http://localhost:8081/abc.html .
 	
 	You shall see the welcome message !
 
 ## Examples
 
 ### Enable SEO by add suffix to the end of requeset url
+	This will automatically add .html to every get() route,but no effect to other http methods.
+
 	easyRoute.enableseo('html');
 
 ### Router with controller's file path and action
@@ -83,7 +85,21 @@ https://github.com/vtista/easyRoute
     	 console.log('contact me')
     	 next();
      },page.contact);
- 
+
+### Router with post and other http methods
+	 
+	 easyRoute.post('/user/register',function(req,res){
+		 res.send('welcome!');
+	 });
+
+	easyRoute.put('user/edit',function(req,res){
+		res.send('updated!');
+	});
+
+	easyRoute.delete('user/del',function(req,res){
+		res.send('deleted!');
+	})
+
 ### Router with middleware group
 
      easyRoute.get('/bbc',[function(req,res,next){
