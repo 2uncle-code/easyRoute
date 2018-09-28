@@ -2,20 +2,36 @@
   "name": "express-easy-router",
   "version": "1.1.14",
   "description": "more easy and flexible router for node express",
-  "main": "index.js",
+  "main": "bin/index.js",
   "license": "MIT",
-  "dependencies": {
-    "express": "^4.16.3",
-    "supervisor": "0.12.0"
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:vtista/easyRoute.git"
   },
+  "keywords": [
+    "express",
+    "group router",
+    "es6"
+  ],
+  "bugs": {
+    "url": "https://github.com/vtista/easyRoute/issues"
+  },
+  "homepage": "https://github.com/vtista/easyRoute#readme",
   "author": {
     "name": "vtista",
     "email": "mark@vtista.com"
   },
   "scripts": {
-    "start": " supervisor examples.js"
+    "build": " babel -w src/ -d bin/ --copy-files",
+    "start": "npm run build & supervisor bin/examples.js"
   },
   "engines": {
     "node": ">=4.3"
+  },
+  "devDependencies": {
+    "express": "^4.16.3",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "supervisor": "0.12.0"
   }
 }
