@@ -1,6 +1,6 @@
 {
   "name": "express-easy-router",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "more easy and flexible router for node express",
   "main": "bin/index.js",
   "license": "MIT",
